@@ -1,0 +1,86 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>무학시장</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .content-section {
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>무학시장</h1>
+        <nav>
+            <ul>
+                <li><a href="#home" onclick="showSection('home')">홈</a></li>
+                <li><a href="#products" onclick="showSection('products')">제품 소개</a></li>
+                <li><a href="#contact" onclick="showSection('contact')">연락처</a></li>
+                <li><a href="#login" onclick="showSection('login')">로그인</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="content-section active">
+        <h2>프로젝트</h2>
+        <p></p>
+        <!-- 추가적인 콘텐츠 및 이미지 등을 여기에 추가 -->
+    </section>
+
+    <section id="products" class="content-section">
+        <h2>프로젝트</h2>
+        <p>회사 또는 제품에 대한 간단한 소개 내용</p>
+        <!-- 추가적인 콘텐츠 및 이미지 등을 여기에 추가 -->
+    </section>
+
+    <section id="contact" class="content-section">
+        <h2>프로젝트</h2>
+        <p>회사 또는 제품에 대한 간단한 소개 내용</p>
+        <!-- 추가적인 콘텐츠 및 이미지 등을 여기에 추가 -->
+    </section>
+   
+    <section id="login" class="content-section">
+        <h2>로그인</h2>
+        <form>
+            <div class="form-group">
+                <label for="email">이메일:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">비밀번호:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">로그인</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 국립 한국 교통대학교</p>
+    </footer>
+
+    <script>
+        // 페이지 로드 시 홈 섹션만 보이도록 설정
+        document.getElementById('home').classList.add('active');
+
+        function showSection(sectionId) {
+            // 모든 섹션에서 'active' 클래스 제거
+            var sections = document.querySelectorAll('.content-section');
+            sections.forEach(function(section) {
+                section.classList.remove('active');
+            });
+
+            // 선택한 섹션에 'active' 클래스 추가
+            var selectedSection = document.getElementById(sectionId);
+            selectedSection.classList.add('active');
+        }
+    </script>
+</body>
+</html>
